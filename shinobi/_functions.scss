@@ -1,0 +1,15 @@
+/*=============================================
+=                     Functions               =
+=============================================*/
+/*
+  Functions
+  Mixins are a bit like functions but functions take in arguments, perform some operation with that argument
+  and then return a single value.
+  Unlike mixins which return a set of css rules
+*/
+
+@function light-comp($color) {
+  $complement: complement($color);
+  $light-complement: lighten($complement, 30%);
+  @return $light-complement;
+}

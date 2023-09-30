@@ -1,0 +1,30 @@
+@use "sass:math";
+
+.card {
+  display: block;
+  padding: $base-padding;
+  border: $base-border-thickness solid #ddd;
+  box-shadow: $base-box-shadow;
+  // To do a mathematical operation, we have to use the sass math library.
+  // To get access to it, we'll use the @use rule like so; @use 'sass:math' at the top of our file
+  border-radius: math.div($base-border-radius, 4);
+
+  // SCSS allows nesting css rules. The line below is equivalent to
+  // .card > .card-title in normal css
+  .card-title {
+    font-size: $base-font-size;
+    padding-bottom: $base-padding;
+    font-weight: bold;
+  }
+
+  .card-body {
+    font-size: $base-font-size;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+// To debug the output of a calculation we can use the @debug rule like this.
+@debug math.div(10, 3);

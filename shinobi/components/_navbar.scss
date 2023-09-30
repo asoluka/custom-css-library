@@ -1,0 +1,38 @@
+%flex-layout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/*
+  @extend
+  The @extend anotation can be used to extend a set of rules.
+  A rule that shoudld only be extended can be written with its state 
+  starting with a % sign e.g; 
+
+  @extend %flex-layout;
+
+  Rules defined with other css selectors can also be extended e.g;
+
+  @extend .navbar;
+*/
+.navbar {
+  @extend %flex-layout;
+  padding: $base-padding $base-padding * 2;
+  box-shadow: $base-box-shadow;
+  .site-title {
+    font-size: $font-size-lg;
+  }
+  .container {
+    @extend %flex-layout;
+  }
+}
+
+@each $key, $val in $colors {
+  .navbar-#{$key} {
+    @extend .navbar;
+    background-color: $val;
+  }
+}

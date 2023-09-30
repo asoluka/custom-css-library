@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/**  
+  SCSS allows us to specify partials. Partials are files written in scss but will not be transpilled to css directly.
+  They are usually imported into another scss file which gets transpilled.
+  The concept of partials is a way to help modularize css code and enhance maintainability of them.
+  
+  When importing partials into a file, the order of import matters. Based on CSS cascading behaviour, if there are
+  two conflicting styles defined in the imported partials, the latest one takes precedence.
+
+  If there is a variable in any of the partials which other partials depend on, then the partial holding the variables need to be imported first.
+  A partial is denoted by an underscore (_), before it's name.
+  **/
+
+@import "functions";
+@import "variables";
+@import "base";
+@import "breakpoints";
+@import "grid";
+@import "colors";
+@import "components/card";
+@import "components/button";
+@import "components/navbar";
+@import "utilities";
